@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaTex Test</title>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          "HTML-CSS": {
+              messageStyle: "normal",
+              linebreaks: {
+                  automatic: false
+              }
+          },
+          tex2jax: {
+              inlineMath: [["$","$"],["\\(","\\)"]],
+              displayMath: [["$$","$$"],["\\[","\\]"]],
+              processEscapes: true
+          },
+          TeX: {
+              Macros: {
+                  tr: "{\\scriptscriptstyle\\mathrm{T}}",
+              }
+          }
+      });
+    </script>
+    <style>
+      body {
+        justify-items: center;
+        padding: 1%;
+      }
+      h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      div {
+        height: 80px;
+        width: 300px;
+        background-image: linear-gradient(120deg, #fcc89b 10%, #ff5fa2 100%);
+        margin-top: 10px;
+        box-shadow: 20px 10px 5px #666;
+        padding-top: 5px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Newton's Equation of Motion</h1>
+    <div style="height: 60px">$$ F = ma $$</div>
+    <br />
+    <h1>Action</h1>
+    <div style="height: 85px">$$ S = \int^{t_2}_{t_1}(T-V)dt $$</div>
+    <br />
+    <h1>Schrödinger equation</h1>
+    <div>
+      $$ i\hbar \frac{\partial}{\partial t}|\psi (t)\rangle =
+      \hat H|\psi(t)\rangle $$
+    </div>
+    <br />
+    <h1>Entropy</h1>
+    <div style="height: 60px">$$ S = -k_B\ \Sigma_i\ p_i\ ln\ p_i$$</div>
+    <br />
+    <h1>Maxwell's Equations</h1>
+    <div style="height: 180px">
+      $$ \begin{align} \nabla \cdot D &= -\rho \\ \nabla \cdot B &= 0 \\ \nabla
+      \times E &= -\frac{\partial B}{\partial t} \\ \nabla \times H &= J +
+      \frac{\partial D}{\partial t} \end{align}$$
+    </div>
+    <br />
+    <h1>Einstein Field Equation</h1>
+    <div>
+      $$ G{_\mu}{_\nu}+\Lambda g{_\mu}{_\nu} = \frac{8\pi G}{c^4}T{_\mu}{_\nu} $$
+    </div>
+    <br />
+    <h1 style="margin-bottom: 0;">Dirac equation</h1>
+    <h4 style="margin-top: 0;">for spin=1/2</h4>
+    <div>
+      $$ (i\partial\!\!\!/+m)\psi = 0 $$
+    </div>
+    <br />
+    <h1 style="margin-bottom: 0;">Weyl Equation</h1>
+    <h4 style="margin-top: 0;">for spin=1/2</h4>
+    <div>
+      $$ \sigma^\mu \partial_\mu \psi = 0 $$
+    </div>
+    <br />
+    <h1 style="margin-bottom: 0;">Majorana Equation</h1>
+    <h4 style="margin-top: 0;">for spin=1/2</h4>
+    <div>
+        $$ i\partial\!\!\!/\psi-m\psi_c = 0 $$
+    </div>
+    <br />
+    <h1 style="margin-bottom: 0;">Klein-Gordon Equation</h1>
+    <h4 style="margin-top: 0;">for spin=0</h4>
+    <div>
+      $$ (\Box+\mu^2)\psi = 0 $$
+    </div>
+  </body>
+</html>
