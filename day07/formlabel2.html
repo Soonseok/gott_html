@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin-bottom: 3px;
+        }
+        label{
+            display: inline-block;
+            width: 120px;
+            margin: 3px;
+        }
+        textarea{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>회원가입</legend>
+            <label for="name">ID</label>
+            <input type="text" id="name" name="name" placeholder="ID">
+            <button>중복검사</button> <br>
+            <label for="pw">비밀번호</label>
+            <input type="password" id="pw" name="pw" placeholder="Password"> <br>
+            <label for="chkpw">비밀번호 확인</label>
+            <input type="password" id="chkpw" name="chkpw" placeholder="Check Password"> <br>
+            <label for="content" style="vertical-align: top;">내용</label>
+            <textarea name="content" id="content" placeholder="내용을 입력하세요" cols="30" rows="10"></textarea> <br>
+            <input type="radio" name="gender" value="m">남성
+            <input type="radio" name="gender" value="f">여성 <br>
+            <input type="submit" value="send">
+            <input type="reset" value="cancel">
+        </fieldset>
+
+    </form>
+</body>
+</html>
