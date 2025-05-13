@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let grade = prompt("평점 입력", "A, B, C, D, F 중 하나");
+        grade = grade.toUpperCase();
+        switch (grade) {
+            case "A": console.log(grade); break;
+            case "B": console.log(grade); break;
+            case "C": console.log(grade); break;
+            case "D": console.log(grade); break;
+            case "F": console.log(grade); break;
+            default: console.log("잘못 입력"); break;
+        }
+    </script>
+</body>
+</html>

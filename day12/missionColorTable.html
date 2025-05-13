@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <title>Document</title>
+    <style>
+      body {
+        padding-right: 25%;
+        text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>&nbsp;●&nbsp;정순석 컬러 테이블!!!</h1>
+  </body>
+  <script>
+    const body = document.body;
+    const redarr = [0, 128, 255];
+
+    for (let i = 0; i < redarr.length; i++) {
+      let table = document.createElement("table");
+      table.border = "1";
+      let caption = document.createElement("caption");
+      caption.textContent = `red = ${redarr[i].toString(16).padStart(2, "0")}`;
+      table.appendChild(caption);
+
+      for (let j = 0; j < 256; j += 4) {
+        let row = table.insertRow();
+        for (let k = 0; k < 256; k += 4) {
+          const color = `#${redarr[i].toString(16).padStart(2, "0")}${j.toString(16).padStart(2, "0")}${k.toString(16).padStart(2, "0")}`;
+          let cell = row.insertCell();
+          cell.style.backgroundColor = color;
+          cell.onmouseover = function () { cell.textContent = color; };
+          cell.onmouseout = function () { cell.textContent = ""; };
+        }
+      }
+      body.appendChild(table);
+    }
+  </script>
+</html>

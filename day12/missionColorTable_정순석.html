@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <title>Color Table Mission</title>
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        padding-right: 25%;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        height: 60px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 10px;
+        font-weight: bold;
+        aspect-ratio: 1 / 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>&nbsp;●&nbsp;정순석 컬러 테이블</h1>
+  </body>
+  <script>
+    const body = document.body;
+    const redarr = [0, 128, 255];
+
+    for (let i = 0; i < redarr.length; i++) {
+      let table = document.createElement("table");
+      table.border = "1";
+      let caption = document.createElement("caption");
+      caption.textContent = `red = ${redarr[i].toString(16).padStart(2, "0")}`;
+      table.appendChild(caption);
+
+      for (let j = 0; j < 256; j += 16) {
+        let row = table.insertRow();
+        for (let k = 0; k < 256; k += 16) {
+          const tcolor = `#${redarr[i].toString(16).padStart(2, "0")}${j.toString(16).padStart(2, "0")}${k.toString(16).padStart(2, "0")}`;
+          let cell = row.insertCell();
+          cell.style.backgroundColor = tcolor;
+          cell.textContent = tcolor;
+          cell.style.color = `#${(255-redarr[i]).toString(16).padStart(2, "0")}${(255-j).toString(16).padStart(2, "0")}${(255-k).toString(16).padStart(2, "0")}`;
+        }
+      }
+      body.appendChild(table);
+    }
+  </script>
+</html>

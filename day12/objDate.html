@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+        <title>Document</title>
+    </head>
+    <body>
+       구매 날자 : <input type="date" id="pdate"> 
+       <button onclick="checkDate()">확인</button>
+    </body>
+    <Script>
+        function checkDate(){
+            const pdate = document.querySelector("#pdate").value;
+            const s = new Date(pdate);
+            const today = new Date();
+            if(today <= s){
+                console.log("???미래에서 빌려옴?")
+            }else if(today > s){
+                const diffs = today.getTime() - s.getTime();
+                const diff = Math.floor(diffs/(1000*60*60*24));
+                console.log(diff);
+                if(diff > 5){
+                    console.log("반납 하세요 빨리!");
+                }else{
+                    console.log("좀 더 읽으세요!")
+                }
+            }
+        }
+    </Script>
+</html>
