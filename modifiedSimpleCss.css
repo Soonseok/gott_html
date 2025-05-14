@@ -1,6 +1,7 @@
 :root {
     --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
-    --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    --read-font: Georgia, 'Times New Roman', Times, serif;
+    --mono-font: "Cousine for Powerline", "D2Coding";
     --standard-border-radius: 5px;
     --border-width: 1px;
     --bg: #fff;
@@ -34,7 +35,7 @@
 
     img,
     video {
-        opacity: .8
+        opacity: .8;
     }
 }
 
@@ -54,7 +55,7 @@ progress {
 }
 
 html {
-    font-family: var(--sans-font);
+    font-family: var(--mono-font);
     scroll-behavior: smooth
 }
 

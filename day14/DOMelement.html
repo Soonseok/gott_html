@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p1">This Color is ?</p>
+    <input type="button" value="click" onclick="changeStyle()">
+    <input type="button" value="click" onclick="document.getElementById('p1').style.visibility='hidden'">
+    <input type="button" value="click" onclick="document.getElementById('p1').style.visibility='visible'">
+  </body>
+  <Script>
+    function changeStyle(){
+        console.log("clicked");
+        document.getElementById("p1").style.color = "red";
+        document.getElementById("p1").style.fontFamily = "consolas";
+    }
+  </Script>
+</html>

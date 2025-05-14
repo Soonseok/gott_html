@@ -8,10 +8,15 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Matemasie&family=Nerko+One&display=swap');
+        :root {
+        --main-color: #e60012;
+        --dark-color: #191b1d;
+        --main-font: "Arial Narrow", "Segoe UI Semibold", "Noto Sans KR",
+          sans-serif;
+        }
         body{
             background-color: rgb(250, 250, 250);
             justify-items: center;
-            margin-top: 25%;
         }
         div.top{
             width: 33%;
@@ -58,23 +63,23 @@
             border-radius: 15px;
             outline: none;
             padding-left: 10px;
-            background-color: #183153;
+            background-color: var(--main-color);
             color: whitesmoke;
         }
         #loginBtn:hover{
-            background-color: #183153;
+            background-color: var(--main-color);
             color: whitesmoke;
         }
         #register{
             text-decoration: none;
-            color: #183153;
+            color: var(--dark-color);
         }
         .oAuthIcon{
             text-decoration: none;
-            color: #183153;
+            color: var(--main-color);
         }
         #socialLogin{
-            color: #183153;
+            color: var(--dark-color);
             font-weight: bold;
         }
     </style>

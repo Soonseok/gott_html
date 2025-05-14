@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <title>Document</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div>
+      id : <input type="text" name="id" id="id" /><br />
+      <span>영문자로 시작하는 영문자 또는 숫자 6~20자 </span><br />
+      <button id="button1" onclick="checkId()">아이디 검사</button><br />
+    </div>
+    <hr>
+    <div>
+      email : <input type="text" name="email" id="email" /><br />
+      <button id="button2" onclick="checkEmail()">이메일 검사</button><br />
+    </div>
+    <hr>
+    <div>
+      password : <input type="password" name="password" id="password" /><br />
+      <span>8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합</span><br />
+      <button id="button3" onclick="checkPw()">비밀번호 검사</button>
+    </div>
+    <hr>
+  </body>
+  <script>
+    function checkId() {
+      const s = document.getElementById("id").value;
+      const exp = /^[a-z]+[a-z0-9]{5,19}$/g;
+      const bool = exp.test(s);
+      alert(bool);
+    }
+    function checkEmail() {
+      const s = document.getElementById("email").value;
+      const exp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+      const bool = exp.test(s);
+      alert(bool);
+    }
+    function checkPw() {
+      const s = document.getElementById("password").value;
+      const exp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+      const bool = exp.test(s);
+      alert(bool);
+    }
+  </script>
+</html>
