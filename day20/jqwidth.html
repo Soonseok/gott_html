@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../modifiedSimpleCss.css" /> -->
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+    <style>
+        div.div1{
+            width: 100px;
+            height: 50px;
+            float: left;
+            margin: 5%;
+            background-color: pink;
+            text-align: center;
+            align-content: center;
+            cursor: pointer;
+        }
+        div.next{
+            background-color: blue;
+            color: whitesmoke;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="div1">1</div>
+    <div class="div1">2</div>
+    <div class="div1">3</div>
+    <div class="div1">4</div>
+    <div class="div1">5</div>
+  </body>
+  <Script>
+    $(function(){
+        let modWidth = 50;
+        $(".div1").click(function(){
+            $(this).width(modWidth).addClass("next");
+            modWidth -= 10;
+        });
+    });
+  </Script>
+</html>

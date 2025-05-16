@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            const table = document.querySelector("table");
+            for (let celcius = -10; celcius < 101; celcius++) {
+                let row = table.insertRow();
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                cell1.textContent = celcius;
+                cell2.textContent = (celcius * 9 / 5) + 32;
+            }
+        };
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr id="tr1">
+            <td>섭씨</td>
+            <td>화씨</td>
+        </tr>
+    </table>
+</body>
+</html>

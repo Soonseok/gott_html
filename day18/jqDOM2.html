@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="target">이것은 <strong>하나의</strong> 단락</p>
+    <button id="txt">text</button>
+    <button id="html">html</button>
+  </body>
+  <Script>
+    $(function(){
+        $("#txt").click(function(){
+            $("#target").text("<b>내용 변경!!!</b>")
+        });
+        $("#html").click(function(){
+            $("#target").html("<b>내용 변경!!!</b>")
+        });
+    });
+  </Script>
+</html>

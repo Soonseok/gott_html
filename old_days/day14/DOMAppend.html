@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="target" onclick="divClick()" style="cursor: pointer;">클릭클릭</div>
+  </body>
+  <Script>
+    function divClick(){
+        const textnode = document.createTextNode("hello");
+        const body = document.body;
+        body.appendChild(textnode);
+    }
+  </Script>
+</html>

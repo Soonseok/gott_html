@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="fadein">fadein</button>
+    <button id="fadeout">fadeout</button>
+    <img src="../img/lesserafim_hot.webp" width="200px" alt="lesserafim" id="lesserafim" style="display: none; ">
+  </body>
+  <Script>
+    $(document).ready(function(){
+        $("#fadein").click(function(){
+            $("#lesserafim").fadeIn(3000);
+        })
+        $("#fadeout").click(function(){
+            $("#lesserafim").fadeOut(3000);
+        })
+    })
+  </Script>
+</html>

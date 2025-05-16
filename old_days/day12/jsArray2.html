@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <title>Document</title>
+    <script>
+        function init(){
+            for(i=0; i<myForm.length; i++){
+                document.myForm[i].value = 1000*i;
+            }
+        }
+        window.onload = function(){
+        const f = document.querySelector("form");
+        console.log(f)}
+    </script>
+</head>
+<body>
+    <form action="#" name="myForm">
+        필드0 : <input type="text" name="a0" id="a0"><br>
+        필드1 : <input type="text" name="a1" id="a1"><br>
+        필드2 : <input type="text" name="a2" id="a2"><br>
+        <input type="button" value="init( )" onclick="init();">
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <p>HI,  </p>
+    <button id="button1">append</button>
+    <button id="button2">prepend</button>
+  </body>
+  <Script>
+    $(function(){
+        $("#button1").click(function(){
+            $("p").append("<b style='color=red;'>hello</b>")
+        })
+        $("#button2").click(function(){
+            $("p").append("<b style='color=blue;'> World</b>")
+        })
+    })
+  </Script>
+</html>

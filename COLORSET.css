@@ -1,0 +1,58 @@
+:root{
+    /* TWICE - 팀 색상 */
+--color-twice-magenta: #FF5FA2;
+--color-twice-apricot: #FCC89B;
+
+/* TWICE - 멤버 색상 */
+--color-twice-nayeon-skyblue: #5bc2e7;
+--color-twice-jeongyeon-olivegreen: #c5d97a;
+--color-twice-momo-pink: #ff8da1;
+--color-twice-sana-purple: #987dd4;
+--color-twice-jihyo-yellow: #ffc56e;
+--color-twice-mina-mintgreen: #6dcdb8;
+--color-twice-dahyun-white: #ffffff;
+--color-twice-chaeyoung-red: #ee2737;
+--color-twice-tzuyu-blue: #005eb8;
+
+
+/* IZ*ONE - 멤버 색상 */
+--color-izone-eunbi-lightpurple: #302553;
+--color-izone-sakura-pink: #F1D2E7;
+--color-izone-hyewon-coral: #DB706C;
+--color-izone-yena-yellow: #555002;
+--color-izone-chaeyeon-emerald: #A7E0E1;
+--color-izone-chaewon-lightgreen: #CEE5D5;
+--color-izone-minju-white: #F0F0F0;
+--color-izone-nako-blue: #B7D3E9;
+--color-izone-hitomi-beige: #F1C3AA;
+--color-izone-yuri-orange: #F3AA51;
+--color-izone-yujin-blue: #567ACE;
+--color-izone-wonyoung-pink: #D9598C;
+
+
+/* IVE - 멤버 색상 */
+--color-ive-yujin-magenta: #ed4d9b;
+--color-ive-gaeul-blue: #1555a5;
+--color-ive-rei-green: #7ec249;
+--color-ive-wonyoung-red: #ec2f2f;
+--color-ive-liz-cyan: #23c2f2;
+--color-ive-leeseo-yellow: #ede017;
+
+
+/* LE SSERAFIM - 멤버 색상 */
+--color-lesserafim-chaewon-silver: #aeb7c2;
+--color-lesserafim-sakura-pink: #f0a8cf;
+--color-lesserafim-yunjin-green: #44b5a3;
+--color-lesserafim-kazuha-blue: #5f9fd6;
+--color-lesserafim-eunchae-red: #f4857f;
+
+
+/* SMN - 멤버 색상 */
+--color-smn-hitomi-yellow: #f6f07b;
+--color-smn-may-pink: #f2afce;
+--color-smn-kani-red: #de3b60;
+--color-smn-soha-orange: #f47c50;
+--color-smn-dohee-white: #fff;
+--color-smn-junhui-black: #464153;
+--color-smn-seungju-green: #bcddc4;
+}

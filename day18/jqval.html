@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    이름 : <input type="text" id="target" /> <br />
+    <button id="text">val</button>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("#text").click(function () {
+        $("#target").val("김도희");
+      });
+    });
+  </script>
+</html>

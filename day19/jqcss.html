@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../modifiedSimpleCss.css" /> -->
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+
+        }
+    </style>
+  </head>
+  <body>
+    <div id="div" style="background-color: antiquewhite;">qwerqwer</div>
+    <button id="button">css ele</button>
+    <button id="button2">css ele</button>
+    <p id="result">결과 표시</p>
+  </body>
+  <Script>
+    $(function(){
+        $("#button").click(function(){
+            const color = $("#div").css("background-color", "black").css("color", "white");
+            console.log(color)
+        });
+        $("#button2").click(function(){
+            $("#div").css("background-color", "white").css("color", "black").css("border", "1px solid black")
+        })
+    })
+  </Script>
+</html>

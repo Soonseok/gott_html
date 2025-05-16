@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="out"><p>마우스 움직</p><p>0</p></div>
+    <br>
+    <br>
+    <div><p>마우스 움직</p><p>0</p></div>
+  </body>
+  <style>
+    div{
+        border: 1px dotted red;
+        text-align: center;
+    }
+  </style>
+  <Script>
+    let i = 0;
+    $(function(){
+        $(".out").mouseover(function(){
+            $("p:first", this).text("mouse over");
+            $("p:last", this).text(++i)
+        })
+    })
+  </Script>
+</html>

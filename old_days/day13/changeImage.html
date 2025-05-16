@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="../img/pome.png" id="image1" width="200px" title="1" />
+    <img src="../img/pome.png" id="image2" width="200px" title="1" />
+    <img src="../img/pome.png" id="image3" width="200px" title="1" />
+    <img src="../img/pome.png" id="image4" width="200px" title="1" />
+    <br />
+    <input type="button" value="image1 click" onclick="changeImage('image1')" />
+    <input type="button" value="image2 click" onclick="changeImage('image2')" />
+    <input type="button" value="image3 click" onclick="changeImage('image3')" />
+    <input type="button" value="image4 click" onclick="changeImage('image4')" />
+  </body>
+  <script>
+    function changeImage(name) {
+      const image1 = document.querySelector(`#${name}`);
+      console.log(image1.title);
+      if (image1.title == 1) {
+        image1.src = "../img/poodle.png";
+        image1.title = 2;
+      } else if (image1.title == 2) {
+        image1.src = "../img//pome.png";
+        image1.title = 1;
+      }
+    }
+  </script>
+</html>

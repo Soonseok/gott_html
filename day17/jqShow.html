@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Show</button>
+    <br>
+    <img src="../img/apple2.png" alt="apple" id="apple" width="120" style="display: none;">
+  </body>
+  <Script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("#apple").show(3000);
+        })
+    })
+  </Script>
+</html>

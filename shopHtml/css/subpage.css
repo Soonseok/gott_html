@@ -1,0 +1,71 @@
+#sub-img{
+    width: 971px;
+    height: 179px;
+    background-image: url(../images/company/sub_back.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+#sub-menu{
+    width: 238px;
+    float: left;
+    margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    border: 1px solid black;
+}
+
+#sub-menu ul{
+    margin: 20px 0 0 10px;
+    list-style: none;
+}
+
+#sub-menu a{
+    color: var(--color-gray);
+    text-decoration: none;
+    display: block;
+    height: 15px;
+    width: 150px;
+    padding: 7px;
+    border-bottom: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: var(--color-gray);
+    background-image: url(../images/bullet.gif);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+#sub-menu a:hover{
+    color: var(--color-orange);
+    background-image: url(../images/bullet_orange.gif);
+    transform: scale(1.1);
+}
+
+article{
+    float: left;
+    border: 1px solid black;
+    width: 670px;
+}
+
+article h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 45px;
+    color: var(--color-gray);
+    margin: 20px 0 ;
+    font-weight: normal;
+    padding-left: 14px;
+}
+
+article p{
+    padding-left: 16px;
+}
+
+figure.ceo{
+    float: right;
+    margin: 10px;
+}
+
+figcaption{
+    text-align: center;
+    color: #39f;
+}

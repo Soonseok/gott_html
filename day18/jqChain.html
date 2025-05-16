@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <button>메소드 체인</button>
+    <img src="../img/apple2.png" alt="apple" id="apple" width="200px" style="display: none;">
+  </body>
+  <Script>
+    $(function(){
+        $("button").click(function(){
+            $("#apple").show("slow").fadeOut(3000).slideDown(3000);
+        })
+    })
+  </Script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="../img/apple2.png" alt="" width="300px" id="apple">
+    <br>
+    <button>attr</button>
+  </body>
+  <Script>
+    $(function(){
+        $("button").click(function(){
+            $("#apple").attr("src", "../img/lesserafim_hot.webp")
+        })
+    })
+  </Script>
+</html>
