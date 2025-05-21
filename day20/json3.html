@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../COLORSET.css" />
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    
+  </body>
+  <Script>
+    const param2 = {
+        "quiz":{
+            "sports":{
+                "q1":{
+                    "question":"which one is not correct team name in NFL?",
+                    "options":[
+                        "Arizona Cardinals",
+                        "Atlanta Falcons",
+                        "Jacksonville Jaguars",
+                        "San Francisco 49ers",
+                        "New York Bulls"
+                    ],
+                    "answer":"New York Bulls"
+                }
+            },
+            "Maths":{
+                "q1":{
+                    "question":"Is quaternion a ring?",
+                    "options":[
+                        "yes",
+                        "no",
+                        "limitedly yes"
+                    ],
+                    "answer":"no"
+                },
+                "q2":{
+                    "question":"which property Hilbert space not has??",
+                    "options":[
+                        "completeness",
+                        "norm-induced metric",
+                        "orthogonality",
+                        "isomorphic"
+                    ],
+                    "answer":"norm-induced metric"
+                }
+            }
+        }
+    }
+    $(function(){
+        jsonData();
+    });
+    function jsonData(){
+        console.log(param2.quiz["sports"].q1.question);
+        console.log(param2.quiz["sports"].q1.options);
+        console.log(param2.quiz["sports"].q1.answer);
+    }
+  </Script>
+</html>

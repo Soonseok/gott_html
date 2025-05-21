@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../COLORSET.css" />
+    <link rel="stylesheet" href="../modifiedSimpleCss.css" />
+    <script src="../jq/jquery-3.7.1.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>학생명단</h4>
+    <p style="background-color: yellow;">
+        이름 : <span id="name"></span> &nbsp;
+        나이 : <span id="age"></span> &nbsp;
+    </p>
+    <script>
+        const s = '[' +
+        '{"name":"Tomi", "age":"25"},'+
+        '{"name":"Mei", "age":"21"},'+
+        '{"name":"Kani", "age":"21"},'+
+        '{"name":"Soha", "age":"20"},'+
+        '{"name":"Dohee", "age":"20"},'+
+        '{"name":"Junhwi", "age":"19"},'+
+        '{"name":"Seungju", "age":"16"}'+
+    ']'
+        const students = JSON.parse(s);
+        for(i = 0; i< s.length; i++){
+            const body = document.body;
+            const p = document.createElement("p");
+            const n = document.createElement("span");
+            const a = document.createElement("span");
+            n.id = "name";
+            a.id = "age";
+
+            n.innerHTML = students[i].name;
+            a.innerHTML = students[i].age;
+            p.appendChild(n);
+            p.appendChild(a);
+            body.appendChild(p);
+        }
+    </script>
+  </body>
+  <Script>
+    
+  </Script>
+</html>

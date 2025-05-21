@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://sui.ssgcdn.com/ui/common/img/sb.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <title>숙녀복 - 추천•인기 상품, 신세계백화점</title>
+    <style>
+      :root {
+        --main-color: #a59357;
+        --dark-color: #191b1d;
+        --main-font: Arial, Helvetica, sans-serif;
+      }
+      * {
+        font-family: var(--main-font);
+      }
+      a {
+        text-decoration: none;
+        color: var(--dark-color);
+      }
+      a:visited,
+      a:active {
+        color: var(--dark-color);
+        text-decoration: none;
+      }
+      header {
+        width: 100%;
+        padding-top: 3rem;
+      }
+      #category {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-top: 1rem;
+        padding: 3px 5px;
+        font-weight: 500;
+        font-size: large;
+      }
+      #category > a {
+        margin-right: 2rem;
+      }
+      #category > a:hover {
+        color: var(--main-color);
+      }
+      .category-menu-bars {
+        cursor: pointer;
+        margin-right: 3px;
+      }
+      #filter {
+        margin-top: 1rem;
+      }
+      #filter > a {
+        margin-right: 1rem;
+        font-size: small;
+        color: rgba(0, 0, 0, 0.5);
+      }
+      #recommend {
+        color: black;
+        font-weight: 500;
+      }
+      div#merch img {
+        width: 100%;
+      }
+      div#merch {
+        padding-top: 2rem;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      div#merchDiv {
+        margin: 0.5rem;
+        width: calc(25% - 20px);
+        box-sizing: border-box;
+      }
+      div#merch a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .merchDiscount {
+        color: var(--main-color);
+      }
+      .fa-heart:hover {
+        transform: scale(1.2);
+        transition: 0.2s;
+      }
+      .merchText {
+        width: 68%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0.5rem;
+        margin: 0;
+      }
+      .merchTotalPrice {
+        width: 68%;
+        display: flex;
+      }
+      .merchRating {
+        width: 68%;
+      }
+      @media (max-width: 1280px) {
+        div#merchDiv {
+          flex: 0 0 25%; /* 한 줄에 4개 */
+        }
+      }
+
+      @media (max-width: 1024px) {
+        div#merchDiv {
+          flex: 0 0 33.3333%; /* 한 줄에 3개 */
+        }
+      }
+
+      @media (max-width: 768px) {
+        div#merchDiv {
+          flex: 0 0 50%; /* 한 줄에 2개 */
+        }
+      }
+
+      @media (max-width: 480px) {
+        div#merchDiv {
+          flex: 0 0 100%; /* 한 줄에 1개 */
+        }
+      }
+    </style>
+    <script>
+      const merchData = [
+        {
+          brand: "마리끌레르",
+          name: "마리끌레르 링클프리 포켓 자수 셔츠(MAEASH02M)",
+          price: "29600",
+          discount: "60",
+          stars: "4.4",
+          reviews: "64",
+          image:
+            "https://sitem.ssgcdn.com/96/55/91/item/1000580915596_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000580915596&siteNo=6009&salestrNo=1006&tlidSrchWd=숙녀복&srchPgNo=1&taste=PReview",
+        },
+        {
+          brand: "보니스팍스",
+          name: "7부 루즈핏 티 앤 팬츠 투피스 (XP2OP029M0)",
+          price: "27000",
+          discount: "32",
+          stars: "3.7",
+          reviews: "20",
+          image:
+            "https://sitem.ssgcdn.com/60/87/71/item/1000663718760_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000663718760&siteNo=6009&salestrNo=1007",
+        },
+        {
+          brand: "쉬즈미스",
+          name: "시그니처 타이넥 블라우스",
+          price: "59000",
+          discount: "",
+          stars: "5.0",
+          reviews: "3",
+          image:
+            "https://sitem.ssgcdn.com/85/18/30/item/1000673301885_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000673301885&siteNo=6009&salestrNo=1008",
+        },
+        {
+          brand: "나인(Atelier Nain)",
+          name: "(택가:69,000원)스트레치 슬림 스트레이트 팬츠(PT-5416)",
+          price: "22221",
+          discount: "19",
+          stars: "4.8",
+          reviews: "6",
+          image:
+            "https://sitem.ssgcdn.com/34/55/06/item/1000547065534_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000547065534&siteNo=6009&salestrNo=1008",
+        },
+        {
+          brand: "폴로 랄프 로렌",
+          name: "여성 클래식핏 리넨 셔츠(WMPOSHTNDO20744300)",
+          price: "239000",
+          discount: "",
+          stars: "4.9",
+          reviews: "10",
+          image:
+            "https://sitem.ssgcdn.com/49/65/40/item/1000644406549_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000644406549&siteNo=6009&salestrNo=1004",
+        },
+        {
+          brand: "마리끌레르",
+          name: "스트라이프 클로버 프린팅 티셔츠(MAEBTS12MBK)",
+          price: "27600",
+          discount: "60",
+          stars: "4.1",
+          reviews: "14",
+          image:
+            "https://sitem.ssgcdn.com/36/83/32/item/1000661328336_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000661328336&siteNo=6009&salestrNo=1007",
+        },
+        {
+          brand: "JJ지고트",
+          name: "원턱 백 밴딩 와이드 팬츠 GP6M0SL921",
+          price: "38637",
+          discount: "75",
+          stars: "4.5",
+          reviews: "2",
+          image:
+            "https://sitem.ssgcdn.com/19/97/21/item/1000686219719_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000686219719&siteNo=6009&salestrNo=1006",
+        },
+        {
+          brand: "파프리카",
+          name: "PJ2DPL02 뒷밴딩 9부 와이드 데님팬츠",
+          price: "15770",
+          discount: "17",
+          stars: "4.8",
+          reviews: "6",
+          image:
+            "https://sitem.ssgcdn.com/49/44/61/item/1000689614449_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000689614449&siteNo=6009&salestrNo=1006",
+        },
+        {
+          brand: "잇미샤",
+          name: "[25 S/S] 잇미샤 스퀘어넥 벨티드 원피스 ITP4ZOP930",
+          price: "173898",
+          discount: "10",
+          stars: "",
+          reviews: "",
+          image:
+            "https://sitem.ssgcdn.com/03/90/30/item/1000676309003_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000676309003&siteNo=6009&salestrNo=1004",
+        },
+        {
+          brand: "폴리츠미",
+          name: "플리츠 블라우스_HPBLM124L13",
+          price: "24000",
+          discount: "20",
+          stars: "",
+          reviews: "",
+          image:
+            "https://sitem.ssgcdn.com/59/52/37/item/1000687375259_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000687375259&siteNo=6009&salestrNo=1019",
+        },
+        {
+          brand: "듀엘",
+          name: "[신세계단독]볼륨 쉬폰 블라우스(D252MSC234)",
+          price: "66542",
+          discount: "58",
+          stars: "",
+          reviews: "",
+          image:
+            "https://sitem.ssgcdn.com/63/42/81/item/1000688814263_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000688814263&siteNo=6009&salestrNo=1019",
+        },
+        {
+          brand: "온앤온",
+          name: "[예약/5월 20일 출고] 핀턱 디테일 A라인 스커트 NEW5XS342",
+          price: "157472",
+          discount: "39",
+          stars: "5.0",
+          reviews: "9",
+          image:
+            "https://sitem.ssgcdn.com/25/68/53/item/1000599536825_i1_232.jpg",
+          url: "https://department.ssg.com/item/itemView.ssg?itemId=1000599536825&siteNo=6009&salestrNo=1006",
+        },
+      ];
+      function createElementWithClass(tag, className, text = "") {
+        const el = document.createElement(tag);
+        if (className) el.className = className;
+        if (text) el.innerText = text;
+        return el;
+      }
+
+      function setStyles(el, styleObj) {
+        Object.assign(el.style, styleObj);
+      }
+
+      window.onload = function () {
+        const merch = document.querySelector("#merch");
+        const headerHeight = document.querySelector("header").offsetHeight;
+        merch.style.paddingTop = headerHeight + "px";
+
+        for (let i = 0; i < merchData.length; i++) {
+          const data = merchData[i];
+
+          const merchDiv = document.createElement("div");
+          merchDiv.id = "merchDiv";
+
+          const merchlink = document.createElement("a");
+          merchlink.href = data.url;
+
+          // 이미지 + 하트 아이콘
+          const merchImgWrapper = document.createElement("div");
+          setStyles(merchImgWrapper, {
+            position: "relative",
+            display: "inline-block",
+          });
+
+          const merchImg = document.createElement("img");
+          merchImg.src = data.image;
+          setStyles(merchImg, { width: "100%" });
+
+          const heartIcon = document.createElement("i");
+          heartIcon.className = "fa-regular fa-heart";
+          setStyles(heartIcon, {
+            position: "absolute",
+            right: "8px",
+            bottom: "8px",
+            fontSize: "1.5rem",
+            color: "#666",
+            cursor: "pointer",
+          });
+
+          merchImgWrapper.appendChild(merchImg);
+          merchImgWrapper.appendChild(heartIcon);
+          merchlink.appendChild(merchImgWrapper);
+
+          // 텍스트 정보
+          const merchText = createElementWithClass("div", "merchText");
+          const merchBrand = createElementWithClass(
+            "span",
+            "merchBrand",
+            data.brand
+          );
+          const merchName = createElementWithClass(
+            "span",
+            "merchName",
+            data.name
+          );
+          setStyles(merchBrand, { fontSize: "1rem", fontWeight: "bold" });
+          setStyles(merchName, {
+            fontSize: "0.8rem",
+            width: "100%",
+            marginTop: "8px",
+          });
+          merchText.appendChild(merchBrand);
+          merchText.appendChild(merchName);
+          merchlink.appendChild(merchText);
+
+          // 가격 정보
+          const merchTotalPrice = createElementWithClass(
+            "div",
+            "merchTotalPrice"
+          );
+          const merchPrice = createElementWithClass(
+            "span",
+            "merchPrice",
+            data.price + "원"
+          );
+          setStyles(merchPrice, {
+            fontSize: "1.1rem",
+            fontWeight: "bold",
+            margin: "3px",
+            width: "100%",
+          });
+          merchTotalPrice.appendChild(merchPrice);
+
+          if (data.discount !== "") {
+            const merchDiscount = createElementWithClass(
+              "span",
+              "merchDiscount",
+              data.discount + "%"
+            );
+            setStyles(merchDiscount, { fontSize: "1.5rem" });
+            merchTotalPrice.appendChild(merchDiscount);
+          }
+          merchlink.appendChild(merchTotalPrice);
+
+          // 별점과 리뷰
+          const merchRating = createElementWithClass("div", "merchRating");
+          if (data.stars !== "") {
+            const merchStars = createElementWithClass(
+              "span",
+              "merchStars",
+              "★ " + data.stars + " | "
+            );
+            setStyles(merchStars, { fontSize: "0.75rem" });
+            merchRating.appendChild(merchStars);
+          }
+          if (data.reviews !== "") {
+            const merchReviews = createElementWithClass(
+              "span",
+              "merchReviews",
+              data.reviews + " 건"
+            );
+            setStyles(merchReviews, { fontSize: "0.75rem" });
+            merchRating.appendChild(merchReviews);
+          }
+          merchlink.appendChild(merchRating);
+
+          merchDiv.appendChild(merchlink);
+          merch.appendChild(merchDiv);
+        }
+      };
+    </script>
+  </head>
+  <header>
+    <a href="#" id="main-logo"
+      ><img
+        src="https://sui.ssgcdn.com/ui/ssgmall-ssg/images/mall/logo/department_logo@2x.png?q=4adcbbbabc18c5d357d6791c043818c4671a7f34"
+        alt="mardimercredi"
+        width="219px"
+    /></a>
+    <div id="category">
+      <i class="fa-solid fa-bars category-menu-bars"></i>
+      <a href="#"><span>Category</span></a>
+      <a href="#"><span>Best</span></a>
+      <a href="#"><span>Deal</span></a>
+      <a href="#"><span>Gift</span></a>
+      <a href="#"><span>New</span></a>
+      <a href="#"><span>Brand</span></a>
+    </div>
+    <div id="filter">
+      <a href="#"
+        ><span id="recommend"
+          >추천순&nbsp;<i class="fa-regular fa-circle-question"></i></span
+      ></a>
+      <a href="#"><span>판매량순</span></a>
+      <a href="#"><span>낮은가격순</span></a>
+      <a href="#"><span>높은가격순</span></a>
+      <a href="#"><span>할인율순</span></a>
+      <a href="#"><span>신상품순</span></a>
+      <a href="#"><span>리뷰많은순</span></a>
+    </div>
+  </header>
+  <body>
+    <div id="merch"></div>
+  </body>
+</html>
